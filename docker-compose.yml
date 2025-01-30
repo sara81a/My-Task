@@ -1,4 +1,13 @@
 services:
-  nginx:
+  mytask:
     build:
-      context:
+      context: ./ass1
+    container_name: my-task
+    ports:
+      - "80:80"
+    volumes:
+      - mytask-data:/usr/share/nginx/html
+
+volumes:
+ mytask-data: { }
+   # networks:
